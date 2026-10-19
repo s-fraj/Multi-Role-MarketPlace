@@ -1,0 +1,125 @@
+:root {
+    --ink: #16262B;
+    --paper: #F6F2E8;
+    --card: #FFFEFB;
+    --teal: #1E5C63;
+    --teal-deep: #123840;
+    --ochre: #E2A33B;
+    --terracotta: #C4552E;
+    --line: #DDD5C3;
+    --muted: #8A8578;
+    --body-muted: #3F4E52;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Work Sans', sans-serif; background: var(--paper); color: var(--ink); }
+  a { text-decoration: none; color: inherit; }
+  .display { font-family: 'Fraunces', serif; }
+
+
+  .top-bar { padding: 20px 48px 0; }
+  .breadcrumb { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+  .breadcrumb span { color: var(--teal-deep); font-weight: 500; }
+
+  .search-row { display: flex; gap: 12px; margin-bottom: 8px; }
+  .search-box {
+    flex: 1; display: flex; align-items: center; gap: 10px;
+    padding: 11px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--card);
+  }
+  .search-box input { border: none; outline: none; font-size: 14px; flex: 1; background: transparent; font-family: inherit; }
+  .sort-select {
+    padding: 11px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); height: 50px;
+    font-size: 14px; color: var(--ink); font-family: inherit;
+  }
+
+  .layout { display: grid; grid-template-columns: 240px 1fr; gap: 32px; padding: 24px 48px 64px; }
+
+  /* Filters */
+  .filters { border-right: 1px solid var(--line); padding-right: 24px; width:250px }
+  .filter-group { margin-bottom: 28px; }
+  .filter-title { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--teal-deep); margin-bottom: 14px; }
+  .filter-option { display: flex; align-items: center; gap: 9px; font-size: 14px; margin-bottom: 11px; color: var(--body-muted); cursor: pointer; }
+  .filter-option input { accent-color: var(--teal); }
+  .filter-option .count { margin-left: auto; color: var(--muted); font-size: 12px; }
+
+  .price-inputs { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+  .price-inputs input {
+    width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 7px;
+    font-size: 13px; font-family: inherit; background: var(--card); width:75px
+  }
+
+  .rating-option { display: flex; align-items: center; gap: 6px; font-size: 13px; margin-bottom: 8px; cursor: pointer; color: var(--body-muted); }
+  .rating-option i { color: var(--ochre); font-size: 14px; }
+
+  .btn-clear { font-size: 13px; color: var(--terracotta); font-weight: 500; cursor: pointer; }
+
+  /* Product grid */
+  .results-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+  .results-count { font-size: 14px; color: var(--body-muted); }
+  
+  .souq-app .produits-page .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+  .souq-app .produits-page .product-card { border-radius: 12px; border: 1px solid var(--line); background: var(--card); overflow: hidden; display: block; }
+  .souq-app .produits-page .product-thumb { width: 100%; height: 200px; background: #EDE7D6; position: relative; margin-bottom: 10px; }
+  
+  .product-badge {
+    position: absolute; top: 10px; left: 10px; background: var(--ochre); color: #412402;
+    font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 5px;
+  }
+  .fav-btn {
+    position: absolute; top: 10px; right: 10px; width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(255,255,255,0.85); display: flex; align-items: center; justify-content: center;
+    font-size: 14px; color: var(--terracotta); cursor: pointer;
+  }
+  .fav-btn.active { background: #E5484D; color: #fff; }
+  .product-body { padding: 14px; }
+  .product-vendor { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .product-name { font-size: 14px; font-weight: 600; color: var(--teal-deep); margin-bottom: 6px; }
+  .product-rating { display: flex; align-items: center; gap: 4px; font-size: 12px; color: var(--ochre); margin-bottom: 10px; }
+  .product-rating span { color: var(--muted); }
+  .product-footer { display: flex; justify-content: space-between; align-items: center; }
+  .price { font-size: 16px; font-weight: 600; color: var(--terracotta); }
+  .add-btn {
+    width: 32px; height: 32px; border-radius: 8px; border: none; background: var(--teal); color: var(--paper);
+    display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 15px;
+  }
+  .add-btn:hover { background: var(--teal-deep); }
+
+  .pagination { display: flex; justify-content: center; gap: 8px; margin-top: 40px; }
+  .page-btn {
+    width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--line); background: var(--card);
+    display: flex; align-items: center; justify-content: center; font-size: 13px; cursor: pointer; color: var(--ink);
+  }
+  .page-btn.active { background: var(--teal); color: var(--paper); border-color: var(--teal); }
+
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: 1fr; }
+    .filters { border-right: none; border-bottom: 1px solid var(--line); padding-right: 0; padding-bottom: 24px; }
+    .souq-app .produits-page .products-grid { grid-template-columns: repeat(2, 1fr); }
+    nav { display: none; }
+  }
+
+/* --- iPhone SE responsive --- */
+@media (max-width: 375px) {
+  .top-bar { padding: 12px 16px 0; }
+  .breadcrumb { font-size: 11px; margin-bottom: 10px; }
+  .search-row { flex-direction: column; gap: 8px; }
+  .search-box { padding: 8px 12px; }
+  .sort-select { height: 42px; padding: 8px 12px; font-size: 13px; }
+  .layout { padding: 16px 16px 32px; gap: 20px; }
+  .filters { padding-right: 0; padding-bottom: 16px; width: 100%; }
+  .filter-group { margin-bottom: 18px; }
+  .filter-title { font-size: 12px; margin-bottom: 10px; }
+  .filter-option { font-size: 13px; margin-bottom: 8px; }
+  .price-inputs input { width: 65px; padding: 6px 8px; }
+  .results-head { margin-bottom: 14px; }
+  .results-count { font-size: 12px; }
+  .souq-app .produits-page .products-grid { grid-template-columns: 1fr; gap: 12px; }
+  .souq-app .produits-page .product-card { width: 100%; }
+  .souq-app .produits-page .product-thumb { height: 160px; }
+  .product-body { padding: 12px; }
+  .product-name { font-size: 13px; }
+  .product-vendor { font-size: 10px; }
+  .price { font-size: 14px; }
+  .add-btn { width: 28px; height: 28px; font-size: 13px; }
+  .pagination { margin-top: 24px; gap: 6px; }
+  .page-btn { width: 32px; height: 32px; font-size: 12px; }
+}

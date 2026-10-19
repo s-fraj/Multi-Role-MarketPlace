@@ -1,0 +1,53 @@
+/* --- Drone delivery: status badge (compact, used on order lists) --- */
+.drone-badge {
+  display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600;
+  padding: 6px 12px; border-radius: 999px; background: #E6F1FB; color: #0C447C;
+}
+.drone-badge.erreur { background: #FBE7E5; color: #A32F26; }
+.drone-badge.terminee { background: #E4F3EA; color: #1F7A4D; }
+.drone-badge i { font-size: 14px; }
+.drone-badge .spin { animation: drone-spin 1.4s linear infinite; }
+@keyframes drone-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* --- Drone delivery: full timeline (tracking page) --- */
+.drone-timeline { display: flex; flex-direction: column; gap: 0; margin: 18px 0; }
+.drone-timeline-step {
+  display: flex; align-items: flex-start; gap: 14px; padding: 4px 0; position: relative;
+}
+.drone-timeline-step:not(:last-child)::before {
+  content: ''; position: absolute; left: 13px; top: 28px; bottom: -4px; width: 2px; background: var(--line);
+}
+.drone-timeline-step.fait:not(:last-child)::before { background: var(--teal); }
+.drone-timeline-dot {
+  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  background: var(--card); border: 2px solid var(--line); color: var(--muted); font-size: 14px; z-index: 1;
+}
+.drone-timeline-step.fait .drone-timeline-dot { background: var(--teal); border-color: var(--teal); color: #fff; }
+.drone-timeline-step.actif .drone-timeline-dot { background: #fff; border-color: var(--teal); color: var(--teal); }
+.drone-timeline-label { font-size: 14px; padding-top: 4px; color: var(--muted); }
+.drone-timeline-step.fait .drone-timeline-label,
+.drone-timeline-step.actif .drone-timeline-label { color: var(--ink); font-weight: 600; }
+
+.drone-timeline-erreur {
+  display: flex; align-items: center; gap: 8px; padding: 12px 14px; border-radius: 10px;
+  background: #FBE7E5; color: #A32F26; font-size: 13px; margin-top: 8px;
+}
+
+/* --- Drone delivery: fleet overview (admin) --- */
+.flotte-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 20px; }
+.flotte-card {
+  padding: 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--card);
+  display: flex; flex-direction: column; gap: 6px;
+}
+.flotte-card.busy { border-color: var(--ochre); background: #FBEBD0; }
+.flotte-card-title { font-size: 13px; font-weight: 700; color: var(--ink); display: flex; align-items: center; gap: 6px; }
+.flotte-card-status { font-size: 12px; color: var(--body-muted); }
+
+.file-attente { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.file-attente-item {
+  font-size: 12px; padding: 6px 10px; border-radius: 999px; background: var(--paper); border: 1px solid var(--line);
+  color: var(--body-muted);
+}
+
+/* Map picker container used on the vendor's "Confirmer la livraison" step */
+#delivery-map-vendeur { height: 380px; width: 100%; }

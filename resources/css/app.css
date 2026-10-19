@@ -1,0 +1,20 @@
+@import './marketplace.css';
+@import'./produits.css';
+@import'./produit-detail.css';
+@import'./panier.css';
+@import'./dash.css';
+@import'./compte.css';
+
+@import'./boutique.css';
+@import'./param-vend.css';
+@import'./toast.css';
+@import'./admin.css';
+@import'./drone.css';
+
+[x-cloak] { display: none !important; }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+

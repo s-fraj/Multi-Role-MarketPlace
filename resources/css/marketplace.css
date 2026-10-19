@@ -1,0 +1,197 @@
+
+:root {
+  --ink: #16262B;
+  --paper: #F6F2E8;
+  --card: #FFFEFB;
+  --teal: #1E5C63;
+  --teal-deep: #123840;
+  --ochre: #E2A33B;
+  --terracotta: #C4552E;
+  --line: #DDD5C3;
+  --muted: #8A8578;
+  --body-muted: #3F4E52;
+
+}
+
+.souq-app { font-family: 'Work Sans', sans-serif; background: var(--paper); color: var(--ink); }
+.souq-app a { text-decoration: none; color: inherit; }
+.souq-app .display { font-family: 'Fraunces', serif; }
+
+/* Header */
+.souq-app header {
+  display: flex; align-items: center; gap: 28px;
+  padding: 14px 48px; border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; z-index: 100; background: var(--paper);
+}
+
+.souq-app .header-left { display: flex; align-items: center; }
+.souq-app .menu-group { position: relative; display: flex; align-items: center; gap: 10px; }
+.souq-app .menu-btn {
+  border: none; background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+  width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: var(--ink); cursor: pointer; flex-shrink: 0;
+}
+.souq-app .logo {
+  font-family: 'Fraunces', serif; font-weight: 600; font-size: 24px; color: var(--teal-deep);
+  letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px; white-space: nowrap;
+}
+.souq-app .logo-mark {
+  width: 30px; height: 30px; border-radius: 8px; background: var(--ochre); color: var(--teal-deep);
+  display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0;
+}
+
+.souq-app .categories-dropdown {
+  display: none; position: absolute; top: calc(100% + 10px); left: 0; min-width: 220px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  box-shadow: 0 12px 28px rgba(18,56,64,0.14); padding: 8px; flex-direction: column; z-index: 110;
+}
+.souq-app .categories-dropdown a {
+  padding: 10px 12px; border-radius: 7px; font-size: 14px; color: var(--ink);
+}
+.souq-app .categories-dropdown a:hover { background: var(--paper); color: var(--teal-deep); }
+.souq-app .menu-group:hover .categories-dropdown { display: flex; }
+
+.souq-app .header-search {
+  flex: 1; display: flex; align-items: center; max-width: 640px;
+  border: 2px solid var(--teal-deep); border-radius: 999px; overflow: hidden;
+}
+.souq-app .header-search input {
+  flex: 1; border: none; outline: none; padding: 10px 18px; font-size: 14px;
+  font-family: inherit; background: var(--card); border-radius: 999px 0 0 999px;
+  
+}
+.souq-app .header-search button {
+  border: none; background: var(--teal-deep); color: var(--paper); width: 44px; height: 40px;
+  display: flex; align-items: center; justify-content: center; font-size: 16px; cursor: pointer; flex-shrink: 0;
+}
+
+.souq-app .search-suggestions {
+  position: absolute; top: calc(100% + 8px); left: 0; right: 0; z-index: 120;
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: 0 14px 32px rgba(18,56,64,0.16); padding: 6px; max-height: 360px; overflow-y: auto;
+}
+.souq-app .search-suggestion-empty { padding: 12px 14px; font-size: 13px; color: var(--muted); }
+.souq-app .search-suggestion-item {
+  display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 8px;
+  font-size: 14px; color: var(--ink);
+}
+.souq-app .search-suggestion-item i { color: var(--muted); font-size: 15px; flex-shrink: 0; }
+.souq-app .search-suggestion-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.souq-app .search-suggestion-name strong { color: var(--teal-deep); font-weight: 600; }
+.souq-app .search-suggestion-meta { font-size: 12px; color: var(--muted); flex-shrink: 0; white-space: nowrap; }
+.souq-app .search-suggestion-item:hover,
+.souq-app .search-suggestion-item.active { background: var(--paper); }
+
+
+.souq-app .header-actions { display: flex; align-items: center; gap: 20px; margin-left: auto; }
+.souq-app .account-link, .souq-app .cart-link {
+  display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--ink); white-space: nowrap;
+}
+.souq-app .account-link i { font-size: 22px; color: var(--ink); }
+.souq-app .account-link span { display: flex; flex-direction: column; line-height: 1.35; text-align: left; }
+.souq-app .account-link small { font-size: 12px; color: var(--muted); font-weight: 400; }
+.souq-app .cart-icon-wrap { position: relative; font-size: 22px; display: flex; }
+.souq-app .cart-link { flex-direction: column; gap: 2px; align-items: center; font-size: 12px; font-weight: 600; }
+.souq-app .cart-icon-wrap .badge {
+  position: absolute; top: -8px; right: -10px; background: var(--ink); color: #fff;
+  font-size: 10px; font-weight: 700; min-width: 17px; height: 17px; padding: 0 3px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.souq-app .btn { padding: 9px 18px; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; border: none; }
+.souq-app .btn-outline { border: 1px solid var(--teal); background: transparent; color: var(--teal); }
+.souq-app .btn-solid { background: var(--teal); color: var(--paper); }
+.souq-app .btn-line { border: 1px solid var(--line); background: transparent; color: var(--ink); display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; font-size: 15px; }
+.souq-app .btn-hero { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; font-size: 15px; }
+.souq-app .icon-btn { position: relative; font-size: 19px; color: var(--ink); cursor: pointer; background: none; border: none; }
+.souq-app .icon-btn .badge {
+  position: absolute; top: -6px; right: -8px; background: var(--terracotta); color: #fff;
+  font-size: 10px; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+}
+
+.souq-app .notif-wrap { position: relative; }
+.souq-app .notif-dropdown {
+  position: absolute; top: calc(100% + 12px); right: 0; width: 340px; max-height: 420px; overflow-y: auto;
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: 0 14px 32px rgba(18,56,64,0.16); z-index: 120;
+}
+.souq-app .notif-dropdown-head { padding: 14px 16px; font-weight: 600; font-size: 14px; color: var(--teal-deep); border-bottom: 1px solid var(--line); }
+.souq-app .notif-item { display: flex; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--line); font-size: 13px; }
+.souq-app .notif-item:last-child { border-bottom: none; }
+.souq-app .notif-item i { font-size: 17px; color: var(--teal); flex-shrink: 0; margin-top: 2px; }
+.souq-app .notif-item.unread { background: rgba(30,92,99,0.05); }
+.souq-app .notif-message { color: var(--ink); line-height: 1.4; }
+.souq-app .notif-date { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.souq-app .notif-empty { padding: 28px 16px; text-align: center; font-size: 13px; color: var(--muted); }
+.souq-app .notif-dropdown-footer { display: block; text-align: center; padding: 12px; font-size: 13px; font-weight: 500; color: var(--teal); border-top: 1px solid var(--line); }
+
+/* Hero */
+.souq-app .hero { padding: 72px 48px 56px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+.souq-app .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--terracotta); }
+.souq-app .hero h1 { font-weight: 500; font-size: 52px; line-height: 1.08; margin: 16px 0 20px; color: var(--teal-deep); }
+.souq-app .hero p { font-size: 17px; line-height: 1.7; color: var(--body-muted); max-width: 460px; margin-bottom: 32px; }
+.souq-app .hero-ctas { display: flex; gap: 14px; margin-bottom: 36px; }
+.souq-app .search-box {
+  display: flex; align-items: center; gap: 10px; max-width: 420px;
+  padding: 10px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--card);
+}
+.souq-app .search-box input { border: none; outline: none; font-size: 14px; flex: 1; background: transparent; font-family: inherit; }
+
+
+ /* Stall cards */
+.stalls { position: relative; height: 380px; }
+.stall-card {
+  position: absolute; width: 210px; padding: 16px; border-radius: 12px;
+  background: var(--card); border: 1px solid var(--line);
+  box-shadow: 0 6px 18px rgba(18,56,64,0.08);
+}
+.stall-card:nth-child(1) { top: 0; left: 10px; transform: rotate(-3deg); }
+.stall-card:nth-child(2) { top: 110px; left: 130px; transform: rotate(2.5deg); }
+.stall-card:nth-child(3) { top: 180px; left: 10px; transform: rotate(-3deg); }
+.stall-name { font-size: 13px; font-weight: 600; color: var(--teal-deep); margin-bottom: 4px; }
+.stall-vendor { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.stall-row { display: flex; justify-content: space-between; align-items: center; }
+.price { font-size: 15px; font-weight: 600; color: var(--terracotta); }
+.rating { display: flex; align-items: center; gap: 3px; font-size: 12px; color: var(--ochre); }
+/* Sections */
+.souq-app section.block { padding: 56px 48px; }
+.souq-app .section-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; }
+.souq-app h2.display { font-weight: 500; font-size: 24px; color: var(--teal-deep); }
+.souq-app .view-all { font-size: 14px; color: var(--teal); font-weight: 500; }
+
+.souq-app .categories-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+.souq-app .category-card { padding: 18px 16px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); cursor: pointer; }
+.souq-app .category-name { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+.souq-app .category-count { font-size: 12px; color: var(--muted); }
+
+.souq-app .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.souq-app .product-card { border-radius: 12px; border: 1px solid var(--line); background: var(--card); overflow: hidden; }
+.souq-app .product-thumb { height: 140px; background: #EDE7D6; }
+.souq-app .product-body { padding: 14px; }
+.souq-app .product-name { font-size: 14px; font-weight: 600; color: var(--teal-deep); margin-bottom: 3px; }
+.souq-app .product-vendor { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+
+/* Trust */
+.souq-app .trust { padding: 48px; background: var(--teal-deep); }
+.souq-app .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 1000px; margin: 0 auto; }
+.souq-app .trust-item { color: var(--paper); }
+.souq-app .trust-item i { font-size: 22px; color: var(--ochre); margin-bottom: 12px; display: block; }
+.souq-app .trust-title { font-size: 16px; font-weight: 500; margin-bottom: 6px; }
+.souq-app .trust-text { font-size: 14px; line-height: 1.6; color: #B9C4C2; }
+
+/* Footer */
+.souq-app footer {
+  padding: 28px 48px; display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; color: var(--muted);
+}
+.souq-app .footer-logo { font-family: 'Fraunces', serif; font-size: 16px; color: var(--teal-deep); }
+
+@media (max-width: 900px) {
+  .souq-app .hero { grid-template-columns: 1fr; }
+  .souq-app .stalls { display: none; }
+  .souq-app .categories-grid, .souq-app .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .souq-app .trust-grid { grid-template-columns: 1fr; }
+  .souq-app header { flex-wrap: wrap; row-gap: 12px; }
+  .souq-app .header-search { order: 3; max-width: 100%; flex-basis: 100%; }
+  .souq-app .account-link span { display: none; }
+}

@@ -1,0 +1,75 @@
+/* Account / dashboard page — reuses the color tokens already defined in marketplace.css */
+
+.souq-app .compte-layout { display: grid; grid-template-columns: 240px 1fr; gap: 32px; padding: 32px 48px 64px; }
+
+/* Account sidebar */
+.souq-app .account-card { border: 1px solid var(--line); border-radius: 12px; background: var(--card); padding: 20px; margin-bottom: 16px; text-align: center; }
+.souq-app .avatar-wrap { position: relative; width: 56px; margin: 0 auto 10px; }
+.souq-app .avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--ochre); color: #412402; font-family: 'Fraunces', serif; font-weight: 600; font-size: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.souq-app .avatar img { width: 100%; height: 100%; object-fit: cover; }
+.souq-app .avatar-edit-btn { position: absolute; bottom: -2px; right: -2px; width: 22px; height: 22px; border-radius: 50%; background: var(--teal-deep); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; border: 2px solid var(--card); cursor: pointer; }
+.souq-app .avatar-edit-btn:hover { background: var(--teal); }
+.souq-app .account-name { font-size: 15px; font-weight: 600; color: var(--teal-deep); }
+.souq-app .account-email { font-size: 12px; color: var(--muted); margin-top: 2px; word-break: break-all; }
+
+.souq-app .side-nav { border: 1px solid var(--line); border-radius: 12px; background: var(--card); overflow: hidden; }
+.souq-app .side-nav a { display: flex; align-items: center; gap: 10px; padding: 12px 16px; font-size: 14px; color: var(--body-muted); border-bottom: 1px solid var(--line); }
+.souq-app .side-nav a:last-child { border-bottom: none; }
+.souq-app .side-nav a i { font-size: 17px; color: var(--muted); }
+.souq-app .side-nav a.active { background: var(--paper); color: var(--teal-deep); font-weight: 500; }
+.souq-app .side-nav a.active i { color: var(--teal); }
+.souq-app .side-nav a:hover { background: var(--paper); }
+.souq-app .side-nav-badge {
+  margin-left: auto; background: var(--terracotta); color: #fff; font-size: 11px; font-weight: 700;
+  min-width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; padding: 0 4px;
+}
+
+/* Main */
+.souq-app h1.page-title { font-family: 'Fraunces', serif; font-weight: 500; font-size: 26px; color: var(--teal-deep); }
+.souq-app .page-sub { font-size: 14px; color: var(--muted); margin-top: 4px; margin-bottom: 24px; }
+
+.souq-app .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
+.souq-app .stat-card { border: 1px solid var(--line); border-radius: 12px; background: var(--card); padding: 18px; }
+.souq-app .stat-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; margin-bottom: 12px; }
+.souq-app .stat-icon.teal { background: #E1F5EE; color: #0F6E56; }
+.souq-app .stat-icon.ochre { background: #FAEEDA; color: #854F0B; }
+.souq-app .stat-icon.coral { background: #FAECE7; color: #993C1D; }
+.souq-app .stat-icon.blue { background: #E6F1FB; color: #0C447C; }
+.souq-app .stat-value { font-family: 'Fraunces', serif; font-size: 24px; font-weight: 500; color: var(--teal-deep); }
+.souq-app .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+.souq-app .panel { border: 1px solid var(--line); border-radius: 12px; background: var(--card); margin-bottom: 24px; }
+.souq-app .panel-head { display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; border-bottom: 1px solid var(--line); }
+.souq-app .panel-title { font-family: 'Fraunces', serif; font-weight: 500; font-size: 17px; color: var(--teal-deep); }
+.souq-app .panel .view-all { font-size: 13px; color: var(--teal); font-weight: 500; }
+
+.souq-app .order-row { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+.souq-app .order-row:last-child { border-bottom: none; }
+.souq-app .order-thumb { width: 52px; height: 52px; border-radius: 8px; background: #EDE7D6; flex-shrink: 0; }
+.souq-app .order-info { flex: 1; }
+.souq-app .order-name { font-size: 14px; font-weight: 600; color: var(--teal-deep); margin-bottom: 3px; }
+.souq-app .order-meta { font-size: 12px; color: var(--muted); }
+.souq-app .order-price { font-size: 14px; font-weight: 600; color: var(--terracotta); width: 70px; text-align: right; }
+.souq-app .panel-empty { padding: 32px 20px; text-align: center; font-size: 14px; color: var(--muted); }
+.souq-app .panel-empty a { color: var(--teal); font-weight: 500; }
+
+.souq-app .status-pill { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.souq-app .status-pill.attente { background: #FAEEDA; color: #854F0B; }
+.souq-app .status-pill.preparation { background: #E6F1FB; color: #0C447C; }
+.souq-app .status-pill.expediee { background: #EEEDFE; color: #3C3489; }
+.souq-app .status-pill.livree { background: #E1F5EE; color: #0F6E56; }
+.souq-app .status-pill.litige { background: #FCEBEB; color: #791F1F; }
+.souq-app .status-pill.annulee { background: #F1EFEA; color: #6B675C; }
+
+.souq-app .order-action { font-size: 13px; color: var(--teal); font-weight: 500; white-space: nowrap; }
+
+.souq-app .quick-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.souq-app .quick-link-card { border: 1px solid var(--line); border-radius: 12px; background: var(--card); padding: 18px; display: flex; align-items: center; gap: 12px; }
+.souq-app .quick-link-card i { font-size: 20px; color: var(--teal); }
+.souq-app .quick-link-title { font-size: 14px; font-weight: 500; }
+.souq-app .quick-link-sub { font-size: 12px; color: var(--muted); }
+
+@media (max-width: 900px) {
+  .souq-app .compte-layout { grid-template-columns: 1fr; }
+  .souq-app .stats-row, .souq-app .quick-links { grid-template-columns: repeat(2, 1fr); }
+}
